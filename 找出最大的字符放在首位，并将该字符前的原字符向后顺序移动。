@@ -1,0 +1,26 @@
+#include<stdio.h>
+void fun(char *p){
+	int i=0;
+	char *q;
+	char max=p[i];
+	while(p[i]!=0){
+		if(max<p[i]){
+			max=p[i];
+			q=p+i;//先找到最大值，记录最大值的位置//
+		}
+		i++;
+	}
+	while(q>p){
+		*q=*(q-1);
+		q--;//进行顺序后移
+	}
+	p[0]=max;
+}
+int main(){
+	char str[80];
+	gets(str);
+	
+	fun(str);
+	puts(str);
+	return 0;
+}
