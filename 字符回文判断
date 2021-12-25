@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<string.h>
+int Judger(char *a);
+int main(){
+    char a[10],b[10];
+    gets(a);
+    Judger(a);
+    if(Judger(a)){
+        puts(a);
+    }
+    else{
+        printf("No!" );
+    }
+    return 0;
+}
+int Judger(char *a){
+      char b[10];
+      int i;
+      for(i=strlen(a)-1;i>=0;i--){
+          b[i]=a[strlen(a)-1-i];
+      }
+      b[strlen(a)]='\0';
+      if(strcmp(a,b)==0)return 1;
+      else return 0;
+}
