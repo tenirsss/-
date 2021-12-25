@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<string.h>
+#define maxlen 10
+#define maxday 7
+int main(){
+    int i;
+    int pos;
+    int flag=0;
+    char str[maxlen];
+    printf("Enter a string:");
+    gets(str);
+    char weekday[][maxlen]={"sunday","monday","tuesday","wednesday","thusday","friday","saturday"};
+    for(i=0;i<maxday;i++){
+        if(strcmp(str,weekday[i])==0){
+            flag=1;
+            pos=i;
+        }
+        
+    }
+    if(flag){
+        printf("%s is %d\n",str,pos);
+    }
+    else
+    printf("Error\n");
+    return 0;
+}
