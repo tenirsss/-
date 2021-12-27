@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+int Judger(char a[]);
+int main(){
+    char str[80];
+    gets(str);
+    if(Judger(str)){
+    	printf("%s",str);
+    	
+	}
+	else{
+		printf("No!");
+	}
+}
+int Judger(char a[]){
+	char *p=a;
+	char *q=a+strlen(a)-1;
+	while(p<=q){
+		if(*p!=*q){
+			return 0;
+			
+		}
+		p++;
+		q--;
+	}
+	return 1;
+}
