@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<string.h>
+#define N 90
+void fun(char *buf);
+int main(){
+    char str[N];
+    printf("Enter string:");
+    scanf("%s",str);
+    fun(str);
+    printf("a=%s\n",str);
+    return 0;
+}
+void fun(char *str){
+    char temp;
+    char *begin=str;
+    char *end=str+strlen(str);
+    char *front,*back;
+    for(front=begin,back=(end-1);front<back;++front,--back){
+        temp=*front;
+        *front=*back;
+        *back=temp;
+    }
+}
