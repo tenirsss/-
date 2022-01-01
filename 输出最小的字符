@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main(){
+	char *str[5];
+	int i;
+	printf("Input five countries' names:\n");
+	for(i=0;i<5;i++){
+		str[i]=(char *)malloc(50);
+		scanf("%s",str[i]);
+		printf("\n");
+	}
+	for(i=0;i<5;i++){
+		if(strcmp(str[0],str[i])>0){
+			str[0]=str[i];
+		}
+	}
+	printf("The minimum is:%s\n",str[0]);
+	for(i=0;i<5;i++){
+		free(str[i]);
+	}
+	return 0;
+}
