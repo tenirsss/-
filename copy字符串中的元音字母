@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+void cpy(char s[],char c[]);
+int main(){
+    char str[20];
+    char copy[20];
+    printf("\n输入字符串：");
+    
+    gets(str);
+    printf("%s",str);
+    cpy(str,copy);
+    printf("\n字符串中的元音字母是%s",copy);
+    return 0;
+}
+void cpy(char s[],char c[]){
+    int i,j;
+    for(i=0,j=0;s[i]!='\0';i++){
+        if(s[i]=='a'||s[i]=='A'||s[i]=='e'||s[i]=='E'||s[i]=='i'||s[i]=='I'||s[i]=='o'||s[i]=='O'||s[i]=='u'||s[i]=='U'){
+            c[j]=s[i];
+            j++;
+        }
+    }
+    c[j]='\0';
+}
