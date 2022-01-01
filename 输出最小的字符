@@ -6,7 +6,7 @@ int main(){
 	int i;
 	printf("Input five countries' names:\n");
 	for(i=0;i<5;i++){
-		str[i]=(char *)malloc(50);
+		str[i]=(char *)malloc(50);//记得malloc一下
 		scanf("%s",str[i]);
 		printf("\n");
 	}
