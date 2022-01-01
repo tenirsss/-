@@ -1,0 +1,44 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main(){
+    int len1=0;
+    int len2=0;
+    int i;
+    int flag=0;
+    int x;
+    char source[50];
+    char insert[50];
+    char final[100];
+    char letter;
+    printf("Input source string 1:\n");
+    gets(source);
+    len1=strlen(source);
+    printf("Input inserted string 2:\n");
+    gets(insert);
+    len2=strlen(insert);
+    printf("Input a letter to locate the index:\n");
+    scanf("%c",&letter);
+    for(i=0;i<len1;i++){
+        if(source[i]==letter){
+            x=i;
+            flag=1;
+            break;
+        }
+    }
+    if(flag){
+        for(i=0;i<x;i++){
+            final[i]=source[i];
+        }
+        for(i=0;i<len2;i++){
+            final[x+i]=insert[i];
+        }
+        for(i=x;i<len1+1;i++){
+            final[len2+i]=source[i];
+        }
+         printf("The new string is:%s",final);
+    }
+   else
+    printf("Not found!");
+    return 0;
+}
